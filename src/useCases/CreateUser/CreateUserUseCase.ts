@@ -21,7 +21,8 @@ class CreateUserUseCase {
     });
 
     if(userAlreadyExists){
-      throw new Error("user and password incorrect")
+      throw new Error("user exists")
+      // throw new Error("user and password incorrect")
     }
     // [] - Cadastra o Usuario
       const passwordHash = await hash(password, 8);
